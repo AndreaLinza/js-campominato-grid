@@ -2,23 +2,32 @@
 // Creo le variabili
 const boxSelect = document.querySelector("[name='boxCounts']")
 const btnClick = document.getElementById("btn-play");
+const btnReset = document.getElementById("btn-reset")
 const gridContainer = document.querySelector(".grid-container")
 
 // creo il pulsante per giocare
 btnClick.addEventListener("click", onClick)
+btnReset.addEventListener("click", outClick)
+
 
 // creo la funzione del pulsante
-function onClick() {
+function onClick() {   
 
-    const boxCounts = parseInt(boxSelect.value)
+        const boxCounts = parseInt(boxSelect.value)
+        
+        const gridList = gridBox(boxCounts)
+        
+        printContainer(gridContainer, gridList)
+    }
 
-    const gridList = gridBox(boxCounts)
+    
+    
+    function outClick(){
+        
+        window.location.reload()
+        
+    }
 
-    printContainer(gridContainer, gridList)
-
-    return
-
-}
 
 
 /**
